@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Puzzle Challenge</title>
+  <style>
+    body {
+      background-color: black;
+      color: green;
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+    .hidden {
+      display: none;
+    }
+    .puzzle-section {
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Puzzle Challenge</h1>
+  <div id="puzzle-section" class="puzzle-section">
+    <h2>Stage 1</h2>
+    <p>Solve this cipher: <strong>FUVNZ XVMM</strong></p>
+    <input id="stage1-input" type="text" placeholder="Enter your answer">
+    <button onclick="checkStage1()">Submit</button>
+    <p id="stage1-message" class="hidden"></p>
+  </div>
+
+  <div id="stage2-section" class="puzzle-section hidden">
+    <h2>Stage 2</h2>
+    <p>Decode this riddle: <strong>I speak without a mouth and hear without ears. I have no body, but I come alive with the wind. What am I?</strong></p>
+    <input id="stage2-input" type="text" placeholder="Enter your answer">
+    <button onclick="checkStage2()">Submit</button>
+    <p id="stage2-message" class="hidden"></p>
+  </div>
+
+  <div id="stage3-section" class="puzzle-section hidden">
+    <h2>Stage 3</h2>
+    <p>Rearrange this: <strong>ACTHAYPIONL</strong></p>
+    <input id="stage3-input" type="text" placeholder="Enter your answer">
+    <button onclick="checkStage3()">Submit</button>
+    <p id="stage3-message" class="hidden"></p>
+  </div>
+
+  <div id="success-message" class="hidden">
+    <h2>Congratulations! You've completed all stages.</h2>
+    <p>The prize has already been claimed, but keep playing for fun!</p>
+  </div>
+
+  <script src="puzzle.js"></script>
+</body>
+</html>
