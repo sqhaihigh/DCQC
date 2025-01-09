@@ -101,3 +101,65 @@ nav ul li a:hover {
   background-color: lime;
   color: black;
 }
+/* Puzzle Home Page */
+main {
+  padding: 80px 20px; /* Adjust for fixed navbar */
+  text-align: center;
+  color: lime;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+#puzzle-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.puzzle-card {
+  background-color: #222;
+  border: 2px solid lime;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  transition: transform 0.3s, background-color 0.3s;
+}
+
+.puzzle-card h2 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.puzzle-card p {
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+.puzzle-card button {
+  background-color: lime;
+  color: black;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.puzzle-card button:hover {
+  background-color: #fff;
+}
+
+.puzzle-card:hover {
+  transform: translateY(-5px);
+  background-color: #333;
+}
