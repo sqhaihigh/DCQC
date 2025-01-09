@@ -8,6 +8,14 @@
 </head>
 <body>
   <div id="menu-container"></div>
+<script>
+  // Dynamically load the menu
+  fetch("menu.html")
+    .then((response) => response.text())
+    .then((menu) => {
+      document.getElementById("menu-container").innerHTML = menu;
+    });
+</script>
 
   <main>
     <h1>About Quest Coin</h1>
