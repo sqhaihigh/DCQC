@@ -1,7 +1,5 @@
-// Store puzzle progress in local storage
+// Progress flags
 let isPuzzleCompleted = localStorage.getItem("puzzleCompleted") === "true";
-
-// Simulate prize redemption flag
 let isPrizeClaimed = localStorage.getItem("prizeClaimed") === "true";
 
 // Stage 1 Logic
@@ -52,7 +50,7 @@ function checkStage3() {
   }
 }
 
-// Prevent access if puzzle is already completed
+// Redirect if puzzle already completed
 if (isPuzzleCompleted) {
   document.getElementById("puzzle-section").classList.add("hidden");
   document.getElementById("stage2-section").classList.add("hidden");
