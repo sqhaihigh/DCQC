@@ -1,11 +1,4 @@
-body {
-  background-color: #000000;
-  color: #00ff00;
-  font-family: 'Arial', sans-serif;
-  text-align: center;
-  margin: 0;
-  padding: 0;
-}
+
 
 .container {
   margin: 50px auto;
@@ -70,16 +63,22 @@ th, td {
 tr:nth-child(even) {
   background-color: #222;
 }
-/* Navigation Menu */
+/* Horizontal Navigation Menu */
 nav {
   background-color: #111;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
   padding: 10px 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 10;
 }
 
 nav ul {
   list-style: none;
   display: flex;
   justify-content: center;
+  align-items: center;
   margin: 0;
   padding: 0;
 }
@@ -92,9 +91,13 @@ nav ul li a {
   text-decoration: none;
   color: lime;
   font-weight: bold;
+  font-size: 16px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 nav ul li a:hover {
-  color: white;
+  background-color: lime;
+  color: black;
 }
-
