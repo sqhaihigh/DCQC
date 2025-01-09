@@ -1,114 +1,11 @@
-/* General Styling */
+/* Global styles */
 body {
   background-color: #000; /* Black background */
   color: lime; /* Lime text color */
+  margin: 0;
   font-family: Arial, sans-serif;
-  margin: 0;
-  padding
-
-
-.container {
-  margin: 50px auto;
-  width: 80%;
-  max-width: 600px;
 }
 
-button {
-  background-color: #00ff00;
-  color: #000;
-  border: none;
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-  margin: 10px;
-  border-radius: 5px;
-}
-
-button:disabled {
-  background-color: #444;
-  color: #888;
-  cursor: not-allowed;
-}
-
-.error {
-  color: red;
-  margin-top: 20px;
-}
- body {
-  background-color: black;
-  color: green;
-  font-family: "Courier New", Courier, monospace;
-  margin: 0;
-  padding: 0;
-}
-
-header {
-  text-align: center;
-  padding: 20px;
-  border-bottom: 2px solid green;
-}
-
-h1, h2 {
-  color: lime;
-}
-
-table {
-  width: 80%;
-  margin: 20px auto;
-  border-collapse: collapse;
-}
-
-table, th, td {
-  border: 1px solid green;
-}
-
-th, td {
-  padding: 10px;
-  text-align: center;
-}
-
-tr:nth-child(even) {
-  background-color: #222;
-}
-/* Horizontal Navigation Menu */
-nav {
-  background-color: #111;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-  padding: 10px 0;
-  position: fixed;
-  width: 100%;
-  top: 0;
-  z-index: 10;
-}
-
-nav ul {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0;
-  padding: 0;
-}
-
-nav ul li {
-  margin: 0 20px;
-}
-
-nav ul li a {
-  text-decoration: none;
-  color: lime;
-  font-weight: bold;
-  font-size: 16px;
-  padding: 10px 20px;
-  border-radius: 5px;
-  transition: background-color 0.3s, color 0.3s;
-}
-
-nav ul li a:hover {
-  background-color: lime;
-  color: black;
-}
-/* Puzzle Home Page */
 main {
   padding: 80px 20px; /* Adjust for fixed navbar */
   text-align: center;
@@ -133,7 +30,7 @@ p {
 }
 
 .puzzle-card {
-  background-color: #222;
+  background-color: #222; /* Dark card background */
   border: 2px solid lime;
   padding: 20px;
   border-radius: 10px;
@@ -169,4 +66,98 @@ p {
 .puzzle-card:hover {
   transform: translateY(-5px);
   background-color: #333;
+}
+
+/* Horizontal Navigation Menu */
+nav {
+  background-color: #111; /* Dark navbar background */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  padding: 10px 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 10;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  margin: 0 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: lime;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+nav ul li a:hover {
+  background-color: lime;
+  color: black;
+}
+ /* Leaderboard Page Styling */
+#leaderboard {
+  background-color: #000; /* Black background */
+  color: lime; /* Lime text color */
+  padding: 80px 20px; /* Adjust for fixed navbar */
+  text-align: center;
+}
+
+#leaderboard h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+#leaderboard-table {
+  width: 90%;
+  max-width: 800px;
+  margin: 0 auto;
+  border-collapse: collapse;
+  box-shadow: 0 0 10px lime;
+}
+
+#leaderboard-table th,
+#leaderboard-table td {
+  border: 1px solid lime;
+  padding: 15px;
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+#leaderboard-table th {
+  background-color: #111; /* Dark header background */
+  color: lime; /* Lime header text */
+  font-weight: bold;
+}
+
+#leaderboard-table tr:nth-child(even) {
+  background-color: #222; /* Slightly lighter for even rows */
+}
+
+#leaderboard-table tr:nth-child(odd) {
+  background-color: #111; /* Slightly darker for odd rows */
+}
+
+#leaderboard-table tr:hover {
+  background-color: #333; /* Highlight row on hover */
+}
+
+#leaderboard-table td {
+  color: lime; /* Lime text color */
+}
+
+#leaderboard-footer {
+  margin-top: 20px;
+  font-size: 1.2rem;
 }
