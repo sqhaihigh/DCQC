@@ -19,7 +19,7 @@ async function connectWallet() {
 
 async function checkTokenBalance(walletAddress) {
   try {
-    const connection = new solanaWeb3.Connection("https://api.mainnet-beta.solana.com");
+    const connection = new solanaWeb3.Connection("https://api.devnet.solana.com");
     const publicKey = new solanaWeb3.PublicKey(walletAddress);
     const tokenAccounts = await connection.getParsedTokenAccountsByOwner(publicKey, {
   programId: new solanaWeb3.PublicKey("TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"),
