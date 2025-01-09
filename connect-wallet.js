@@ -7,6 +7,6 @@ document.getElementById("connect-wallet").addEventListener("click", () => {
 
   // Redirect to the puzzle page
   alert("Wallet connected successfully!");
-  window.location.href = "puzzle.html";
+  window.location.href = "puzzle-home.html";
 });
  
