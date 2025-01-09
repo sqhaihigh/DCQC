@@ -1,54 +1,61 @@
-const MINIMUM_QUEST_COIN = 50; // Replace with your token amount
-const TOKEN_MINT_ADDRESS = "DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263"; // Replace with your token mint address
+// Store puzzle progress in local storage
+let isPuzzleCompleted = localStorage.getItem("puzzleCompleted") === "true";
 
-async function connectWallet() {
-  if (window.solana && window.solana.isPhantom) {
-    try {
-      const response = await window.solana.connect();
-      const walletAddress = response.publicKey.toString();
-      localStorage.setItem("walletAddress", walletAddress);
-      document.getElementById("login-section").style.display = "none";
-      checkTokenBalance(walletAddress);
-    } catch (err) {
-      alert("Wallet connection failed: " + err.message);
-    }
+// Simulate prize redemption flag
+let isPrizeClaimed = localStorage.getItem("prizeClaimed") === "true";
+
+// Stage 1 Logic
+function checkStage1() {
+  const answer = document.getElementById("stage1-input").value.trim().toUpperCase();
+  if (answer === "FUNNY ZEBRA") {
+    document.getElementById("stage1-message").innerText = "Correct! Proceeding to Stage 2...";
+    document.getElementById("stage1-message").classList.remove("hidden");
+    document.getElementById("puzzle-section").classList.add("hidden");
+    document.getElementById("stage2-section").classList.remove("hidden");
   } else {
-    alert("Please install a Phantom Wallet.");
+    alert("Wrong answer! Try again.");
   }
 }
 
-async function checkTokenBalance(walletAddress) {
-  try {
-    const connection = new solanaWeb3.Connection("https://api.devnet.solana.com");
-    const publicKey = new solanaWeb3.PublicKey(walletAddress);
-    const tokenAccounts = await connection.getParsedTokenAccountsByOwner(publicKey, {
-  programId: new solanaWeb3.PublicKey("TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"),
-});
-let balance = 0;
-tokenAccounts.value.forEach((account) => {
-  const tokenInfo = account.account.data.parsed.info;
-  if (tokenInfo.mint === TOKEN_MINT_ADDRESS) {
-    balance = parseFloat(tokenInfo.tokenAmount.uiAmountString);
+// Stage 2 Logic
+function checkStage2() {
+  const answer = document.getElementById("stage2-input").value.trim().toLowerCase();
+  if (answer === "echo") {
+    document.getElementById("stage2-message").innerText = "Correct! Proceeding to Stage 3...";
+    document.getElementById("stage2-message").classList.remove("hidden");
+    document.getElementById("stage2-section").classList.add("hidden");
+    document.getElementById("stage3-section").classList.remove("hidden");
+  } else {
+    alert("Wrong answer! Try again.");
   }
-});
+}
 
+// Stage 3 Logic
+function checkStage3() {
+  const answer = document.getElementById("stage3-input").value.trim().toUpperCase();
+  if (answer === "ALPHABETICAL") {
+    document.getElementById("stage3-message").innerText = "Correct! You've completed the challenge!";
+    document.getElementById("stage3-message").classList.remove("hidden");
+    document.getElementById("stage3-section").classList.add("hidden");
 
-    if (balance >= MINIMUM_QUEST_COIN) {
-      document.getElementById("puzzle-section").style.display = "block";
-      document.getElementById("stage-1").disabled = false;
+    if (!isPrizeClaimed) {
+      alert("Congratulations! You're the first winner. The prize is now claimed.");
+      localStorage.setItem("prizeClaimed", "true");
+      isPrizeClaimed = true;
     } else {
-      document.getElementById("error-message").innerText = "You need at least 50 Quest Coins to access the puzzles.";
-      document.getElementById("purchase-token").style.display = "block";
+      alert("You've completed the challenge, but the prize has already been claimed!");
     }
-  } catch (error) {
-    console.error("Error fetching token balance:", error);
-    alert("Failed to fetch token balance.");
+
+    document.getElementById("success-message").classList.remove("hidden");
+  } else {
+    alert("Wrong answer! Try again.");
   }
 }
 
-document.getElementById("connect-wallet").addEventListener("click", connectWallet);
-
-document.getElementById("purchase-token").addEventListener("click", () => {
-  window.open("https://solana-token-purchase-link.com"); // Replace with your token purchase link
-});
- 
+// Prevent access if puzzle is already completed
+if (isPuzzleCompleted) {
+  document.getElementById("puzzle-section").classList.add("hidden");
+  document.getElementById("stage2-section").classList.add("hidden");
+  document.getElementById("stage3-section").classList.add("hidden");
+  document.getElementById("success-message").classList.remove("hidden");
+}
