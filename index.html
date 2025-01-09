@@ -3,28 +3,38 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Quest Coin Puzzle</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="puzzle.js" defer></script>
+  <title>Quest Coin Challenge</title>
+  <style>
+    body {
+      background-color: black;
+      color: green;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+    button {
+      background-color: green;
+      color: black;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+    button:hover {
+      background-color: darkgreen;
+    }
+    #welcome-message {
+      margin-top: 100px;
+    }
+  </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Quest Coin Puzzle Challenge</h1>
-    <div id="login-section">
-      <p>Connect your wallet to start the challenge.</p>
-      <button id="connect-wallet">Connect Wallet</button>
-    </div>
-    <div id="puzzle-section" style="display: none;">
-      <h2>Puzzle Challenge</h2>
-      <p>Complete all stages to win the prize!</p>
-      <div id="stages">
-        <button id="stage-1" disabled>Stage 1</button>
-        <button id="stage-2" disabled>Stage 2</button>
-        <button id="stage-3" disabled>Stage 3</button>
-      </div>
-    </div>
-    <div id="error-message" class="error"></div>
-    <button id="purchase-token" style="display: none;">Purchase Quest Coin</button>
-  </div>
+  <h1>Welcome to the Quest Coin Challenge</h1>
+  <p id="welcome-message">Connect your wallet to access the puzzles!</p>
+  <button id="connect-wallet">Connect Wallet</button>
+
+  <script src="connect-wallet.js"></script>
 </body>
 </html>
