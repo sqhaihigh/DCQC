@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Puzzle Home</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="menu-container"></div>
+
+  <main>
+    <h1>Puzzle Challenges</h1>
+    <p>Select a puzzle to begin your challenge. Each puzzle comes with its own brief to guide you.</p>
+
+    <section id="puzzle-list">
+      <!-- Puzzle 1 -->
+      <div class="puzzle-card">
+        <h2>Puzzle 1: The Cipher Mystery</h2>
+        <p>Crack the code to reveal the hidden message and unlock the next stage.</p>
+        <button onclick="startPuzzle(1)">Start Puzzle 1</button>
+      </div>
+
+      <!-- Puzzle 2 -->
+      <div class="puzzle-card">
+        <h2>Puzzle 2: Number Sequence</h2>
+        <p>Identify the logic behind the number pattern to progress.</p>
+        <button onclick="startPuzzle(2)">Start Puzzle 2</button>
+      </div>
+
+      <!-- Puzzle 3 -->
+      <div class="puzzle-card">
+        <h2>Puzzle 3: Logic Grid</h2>
+        <p>Use clues to solve this logic grid puzzle and claim your reward.</p>
+        <button onclick="startPuzzle(3)">Start Puzzle 3</button>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    function startPuzzle(puzzleNumber) {
+      // Redirect to the specific puzzle page
+      window.location.href = `puzzle${puzzleNumber}.html`;
+    }
+  </script>
+</body>
+</html>
