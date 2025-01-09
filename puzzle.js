@@ -22,16 +22,16 @@ async function checkTokenBalance(walletAddress) {
     const connection = new solanaWeb3.Connection("https://api.mainnet-beta.solana.com");
     const publicKey = new solanaWeb3.PublicKey(walletAddress);
     const tokenAccounts = await connection.getParsedTokenAccountsByOwner(publicKey, {
-      programId: new solanaWeb3.PublicKey("TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"),
-    });
+  programId: new solanaWeb3.PublicKey("TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"),
+});
+let balance = 0;
+tokenAccounts.value.forEach((account) => {
+  const tokenInfo = account.account.data.parsed.info;
+  if (tokenInfo.mint === TOKEN_MINT_ADDRESS) {
+    balance = parseFloat(tokenInfo.tokenAmount.uiAmountString);
+  }
+});
 
-    let balance = 0;
-    tokenAccounts.value.forEach((account) => {
-      const tokenInfo = account.account.data.parsed.info;
-      if (tokenInfo.mint === TOKEN_MINT_ADDRESS) {
-        balance = tokenInfo.tokenAmount.uiAmount;
-      }
-    });
 
     if (balance >= MINIMUM_QUEST_COIN) {
       document.getElementById("puzzle-section").style.display = "block";
