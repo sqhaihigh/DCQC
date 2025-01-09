@@ -157,6 +157,63 @@ nav ul li a:hover {
   color: lime; /* Lime text color */
 }
 
+/* Puzzle Home Page Styling */
+#puzzle-home {
+  background-color: #000; /* Black background */
+  color: lime; /* Lime text color */
+  padding: 80px 20px; /* Adjust for fixed navbar */
+  text-align: center;
+  min-height: 100vh;
+}
+
+#puzzle-home h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  text-shadow: 0 0 10px lime;
+}
+
+#puzzle-home .puzzle-card {
+  background-color: #111; /* Dark card background */
+  border: 1px solid lime; /* Lime border */
+  box-shadow: 0 0 15px lime; /* Neon glow */
+  border-radius: 8px;
+  color: lime;
+  padding: 20px;
+  margin: 20px auto;
+  width: 90%;
+  max-width: 600px;
+  text-align: left;
+}
+
+#puzzle-home .puzzle-card h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+#puzzle-home .puzzle-card p {
+  font-size: 1rem;
+  margin-bottom: 15px;
+}
+
+#puzzle-home .puzzle-card button {
+  background-color: lime;
+  color: black;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+#puzzle-home .puzzle-card button:hover {
+  background-color: black;
+  color: lime;
+  border: 1px solid lime;
+  box-shadow: 0 0 10px lime;
+}
+
 #leaderboard-footer {
   margin-top: 20px;
   font-size: 1.2rem;
