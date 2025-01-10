@@ -10,7 +10,7 @@ let isPrizeClaimed = localStorage.getItem("prizeClaimed") === "true";
 // Stage 1 Logic
 function checkStage1() {
   const answer = document.getElementById("stage1-input").value.trim().toUpperCase();
-  if (answer === "FUNNY ZEBRA") {
+  if (answer === "OBSERVER CONSOLE") {
     document.getElementById("stage1-message").innerText = "Correct! Proceeding to Stage 2...";
     document.getElementById("stage1-message").classList.remove("hidden");
     document.getElementById("puzzle-section").classList.add("hidden");
@@ -23,7 +23,7 @@ function checkStage1() {
 // Stage 2 Logic
 function checkStage2() {
   const answer = document.getElementById("stage2-input").value.trim().toLowerCase();
-  if (answer === "echo") {
+  if (answer === "DREAM WALKING") {
     document.getElementById("stage2-message").innerText = "Correct! Proceeding to Stage 3...";
     document.getElementById("stage2-message").classList.remove("hidden");
     document.getElementById("stage2-section").classList.add("hidden");
@@ -36,7 +36,7 @@ function checkStage2() {
 // Stage 3 Logic
 function checkStage3() {
   const answer = document.getElementById("stage3-input").value.trim().toUpperCase();
-  if (answer === "ALPHABETICAL") {
+  if (answer === "JUSTICE SOLACE") {
     document.getElementById("stage3-message").innerText = "Correct! You've completed the challenge!";
     document.getElementById("stage3-message").classList.remove("hidden");
     document.getElementById("stage3-section").classList.add("hidden");
