@@ -1,7 +1,7 @@
 // Progress flags
 function startPuzzle(puzzleId) {
   // Redirect users to the corresponding puzzle page
-  window.location.href = `${puzzleId}.html`;
+  window.location.href = `https://sqhaihigh.github.io/DCQC/${puzzleId}.html`;
 }
 
 let isPuzzleCompleted = localStorage.getItem("puzzleCompleted") === "true";
