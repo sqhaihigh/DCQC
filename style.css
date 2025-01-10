@@ -218,3 +218,14 @@ nav ul li a:hover {
   margin-top: 20px;
   font-size: 1.2rem;
 }
+
+
+.puzzle-image {
+  width: 100%; /* Make the image fit the card */
+  max-height: 200px; /* Limit the height */
+  object-fit: cover; /* Ensure the image doesn't stretch */
+  border-radius: 8px; /* Add rounded corners */
+  margin-bottom: 15px;
+  box-shadow: 0 0 10px lime; /* Add a glow effect */
+}
+
