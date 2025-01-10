@@ -1,4 +1,9 @@
 // Progress flags
+function startPuzzle(puzzleId) {
+  // Redirect users to the corresponding puzzle page
+  window.location.href = `${puzzleId}.html`;
+}
+
 let isPuzzleCompleted = localStorage.getItem("puzzleCompleted") === "true";
 let isPrizeClaimed = localStorage.getItem("prizeClaimed") === "true";
 
